@@ -1,0 +1,24 @@
+@keyframes slideIn {
+    0% {
+        opacity: .6;
+        -webkit-transform: scale(0.95) translateY(-20px);
+        transform: scale(0.95) translateY(-20px);
+    }
+    
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+@keyframes slideSidebarRight {
+    0% {
+        left: -260px;
+        opacity: 0;
+    }
+
+    100% {
+        left: 0;
+        opacity: 1;
+    }
+}

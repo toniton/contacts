@@ -1,0 +1,23 @@
+.contact-card {
+    background: #fafafa;
+    display: flex;
+    padding: 8px !important;
+    border: 1px solid #fafafa;
+    height: 66px;
+    &:hover {
+        background-color: rgba(228,228,228,0.30);
+        border-color: #eeeeee;
+    }
+
+    .contact-details {
+        flex-grow: 1;
+    }
+
+    .contact-actions {
+        align-self: center;
+
+        .phone {
+            color: #4d851b;
+        }
+    }
+}

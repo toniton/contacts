@@ -1,0 +1,36 @@
+$europa-font-path: './fonts/';
+@font-face {
+    font-family: 'europa';
+    src: url('#{$europa-font-path}europa-bold-webfont.eot');
+    src: url('#{$europa-font-path}europa-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('#{$europa-font-path}europa-bold-webfont.woff2') format('woff2'),
+         url('#{$europa-font-path}europa-bold-webfont.woff') format('woff'),
+         url('#{$europa-font-path}europa-bold-webfont.ttf') format('truetype'),
+         url('#{$europa-font-path}europa-bold-webfont.svg#europabold') format('svg');
+    font-weight: 700;
+    font-style: bold;
+}
+
+@font-face {
+    font-family: 'europa';
+    src: url('#{$europa-font-path}europa-light-webfont.eot');
+    src: url('#{$europa-font-path}europa-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('#{$europa-font-path}europa-light-webfont.woff2') format('woff2'),
+         url('#{$europa-font-path}europa-light-webfont.woff') format('woff'),
+         url('#{$europa-font-path}europa-light-webfont.ttf') format('truetype'),
+         url('#{$europa-font-path}europa-light-webfont.svg#europalight') format('svg');
+    font-weight: 100;
+    font-style: light;
+}
+
+@font-face {
+    font-family: 'europa';
+    src: url('#{$europa-font-path}europa-regular-webfont.eot');
+    src: url('#{$europa-font-path}europa-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('#{$europa-font-path}europa-regular-webfont.woff2') format('woff2'),
+         url('#{$europa-font-path}europa-regular-webfont.woff') format('woff'),
+         url('#{$europa-font-path}europa-regular-webfont.ttf') format('truetype'),
+         url('#{$europa-font-path}europa-regular-webfont.svg#europaregular') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}

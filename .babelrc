@@ -1,0 +1,17 @@
+{
+    "plugins": [
+        "transform-class-properties",
+        [
+            "transform-runtime",
+            {
+                "polyfill": false,
+                "regenerator": true
+            }
+        ]
+    ],
+    "presets": [
+        "env",
+        "react",
+        "stage-0"
+    ]
+}
