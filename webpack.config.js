@@ -6,10 +6,12 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
     devtool: 'inline-source-map',
     devServer: {
+        open: true,
+        inline: true,
         contentBase: './dist',
         historyApiFallback: true
     },
-    entry: ['babel-polyfill', './src/index.js'],
+    entry: ['babel-polyfill', './src/index.js', 'webpack/hot/dev-server'],
     module: {
         rules: [
             {

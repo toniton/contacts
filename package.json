@@ -1,9 +1,11 @@
 {
-  "name": "hellofresh",
+  "name": "transferwise",
   "version": "1.0.0",
-  "description": "Hello fresh test by Toniton",
+  "description": "Transferwise test by Toniton",
   "private": true,
   "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
     "express": "^4.16.3",
     "lodash": "^4.17.10"
   },
@@ -71,7 +73,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hellofreshdevtests/toniton-frontend-test.git"
+    "url": "git+https://github.com/toniton/contacts.git"
   },
   "keywords": [
     "hello",
@@ -80,7 +82,7 @@
   "author": "Toniton",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hellofreshdevtests/toniton-frontend-test/issues"
+    "url": "https://github.com/toniton/contacts/issues"
   },
-  "homepage": "https://github.com/hellofreshdevtests/toniton-frontend-test#readme"
+  "homepage": "https://github.com/toniton/contacts#readme"
 }
