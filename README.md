@@ -3,7 +3,9 @@
 
 
 ## Curious?
-
+![preview](https://raw.githubusercontent.com/toniton/contacts/master/screenshot.png)
+      
+      
 - [Click Me](https://toniton-contacts.herokuapp.com/) to see what it looks like
 
 ## Setup Instructions:
