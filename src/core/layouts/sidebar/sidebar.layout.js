@@ -21,7 +21,7 @@ export default class SidebarLayout extends Component {
     }
 
     render() {
-        const { background, component, path } = this.props;
+        const { background, component: ChildComponent } = this.props;
         return (
             <div className="layout" style={{ background: background }}>
                 <HeaderComponent onChange={this.searchChange}/>
@@ -29,7 +29,7 @@ export default class SidebarLayout extends Component {
                     <div className="row">
                         <SidebarComponent />
                         <div className="col-md-12 col-lg-7 main">
-                            <Route path={path} component={component}/>
+                            {<ChildComponent/>}
                         </div>
                     </div>
                 </div>

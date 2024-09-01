@@ -16,7 +16,7 @@ app.use(webpackDevMiddleware(compiler, {
 }));
 
 // Add json-server to mock data
-const router = jsonServer.router(path.join(__dirname, 'db/transferwise.json'));
+const router = jsonServer.router(path.join(__dirname, 'db/contacts.json'));
 const middlewares = jsonServer.defaults();
 app.use('/api', middlewares);
 app.use('/api', router);
@@ -34,5 +34,5 @@ app.use('*', function (req, res) {
 
 // Serve the files on port 3000.
 app.listen(port, function () {
-  console.log(`TransferWise app listening on port ${port}!\n`);
+  console.log(`Contacts app listening on port ${port}!\n`);
 });

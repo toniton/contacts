@@ -23,7 +23,7 @@
     ```sh
     ...
 
-    TransferWise app listening on port 3000! 
+    Contacts app listening on port 3000! 
     ```
  - Visit [http://localhost:3000](http://localhost:3000) on your computer.
 

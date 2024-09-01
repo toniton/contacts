@@ -45,7 +45,7 @@ class HeaderComponent extends Component {
                 </button>
                 <Link to="/" className="navbar-brand" href="#">Contacts</Link>
                 <div className="collapse show navsearch" id="navbarMenuContent">
-                    <form className="search-holder form-inline" onSubmit={this.searchContacts(search)}>
+                    <form className="search-holder d-flex" onSubmit={this.searchContacts(search)}>
                         <input className="form-control mr-sm-2" type="search" value={search} onChange={this.handleChange} placeholder="Search contacts" aria-label="Search" />
                         <button className="btn btn-primary my-2 my-sm-0" type="submit"><i className="fa far fa-search"></i></button>
                     </form>

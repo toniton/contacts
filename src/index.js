@@ -3,13 +3,13 @@ import './styles/index.scss';
 
 // Dependencies
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { createRoot } from 'react-dom/client';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 
 import { Provider } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import * as reducers from './reducers';
-import thunk from 'redux-thunk';
+import { thunk } from 'redux-thunk';
 
 import 'bootstrap/dist/js/bootstrap.js';
 
@@ -22,14 +22,14 @@ import HomeComponent from './main/home/home.component';
 import ErrorsComponent from './main/errors/errors.component';
 
 const store = createStore(combineReducers(reducers), applyMiddleware(thunk));
-ReactDOM.render(
+const root = createRoot(document.getElementById('app'))
+root.render(
     <Provider store={store}>
         <Router>
-            <Switch>
-                <SidebarLayout background="#fafafa" exact path="/" component={HomeComponent} />
-                <PlainLayout background="#ff686870" component={ErrorsComponent} />
-            </Switch>
+            <Routes>
+                <Route path="/" exact element={<SidebarLayout background="#fafafa" component={HomeComponent} />} />
+                <Route element={<PlainLayout background="#ff686870" component={ErrorsComponent} />} />
+            </Routes>
         </Router>
-    </Provider>,
-    document.getElementById('app')
+    </Provider>
 );

@@ -1,45 +1,42 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
     devtool: 'inline-source-map',
     devServer: {
         open: true,
-        inline: true,
-        contentBase: './dist',
-        historyApiFallback: true
+        static: './dist',
+        historyApiFallback: true,
+        hot: true
     },
-    entry: ['babel-polyfill', './src/index.js', 'webpack/hot/dev-server'],
+    entry: ['babel-polyfill', './src/index.js'],
     module: {
         rules: [
             {
                 test: /\.css$/,
-                use: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    use: 'css-loader',
-                })
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    'css-loader'
+                ]
             },
             {
                 test: /\.scss|\.sass$/,
-                use: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    use: ['css-loader', 'sass-loader'],
-                })
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    "sass-loader"
+                ]
             },
             {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
                 loader: "babel-loader",
-                query: {
-                    presets: ['babel-preset-env', 'react', 'stage-0' ]
+                options: {
+                    presets: ['@babel/preset-env', '@babel/react']
                 }
-            },
-            {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                loader: "eslint-loader"
             },
             {
                 test: /\.(png|svg|jpg|gif)$/,
@@ -68,12 +65,20 @@ module.exports = {
         ],
     },
     plugins: [
-        new CleanWebpackPlugin(['dist']),
+        new CleanWebpackPlugin({
+            cleanAfterEveryBuildPatterns: ['dist']
+        }),
+        new ESLintPlugin({
+            extensions: ['js', 'jsx'],
+            exclude: 'node_modules',
+            emitWarning: true,
+            failOnError: false,  
+        }),
         new HtmlWebpackPlugin({
             title: 'Output Management',
             template: 'src/index.html'
         }),
-        new ExtractTextPlugin({
+        new MiniCssExtractPlugin({
             filename: 'style.[hash].css'
         }),
     ]
